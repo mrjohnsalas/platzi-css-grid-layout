@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Line</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: [col-start] 1fr 1fr 1fr [first-end] 1fr 1fr [second-end] 1fr 1fr [col-end];
+            grid-template-rows: [row-start] 200px [row-second] 200px [row-end];
+            gap: 5px;
+            height: 100vh;
+        }
+
+        .item {
+            background-color: lightblue;
+            padding: 10px;
+            border: 1px solid red;
+        }
+
+        .item:nth-of-type(1) {
+            grid-column: col-start / first-end;
+            grid-row: row-start / row-end;
+        }
+
+        .item:nth-of-type(2) {
+            grid-column: first-end / second-end;
+            grid-row: row-start / row-end;
+        }
+
+        .item:nth-of-type(3) {
+            grid-column: second-end/ col-end;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">item #1</div>
+        <div class="item">item #2</div>
+        <div class="item">item #3</div>
+        <div class="item">item #4</div>
+        <div class="item">item #5</div>
+    </div>
+</body>
+</html>
